@@ -13,11 +13,11 @@ module.exports = async (req, res) => {
 	// 查询条件
 	let condition = {};
 	// 分类条件
-	if (req.fields.category != undefined) {
+	if (req.fields.category != undefined && req.query.category !== '') {
 		condition.category = req.fields.category;
 	}
 	// 状态条件
-	if (req.fields.state != undefined) {
+	if (req.fields.state != undefined && req.query.state !== '') {
 		condition.state = req.fields.state;
 	}
 	// 查询用户信息

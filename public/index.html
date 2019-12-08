@@ -178,32 +178,11 @@
     </div>
     <div class="content">
       <div class="swipe">
-        <ul class="swipe-wrapper">
-          <li>
-            <a href="#">
-              <img src="uploads/slide_1.jpg">
-              <span>XIU主题演示</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="uploads/slide_2.jpg">
-              <span>XIU主题演示</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="uploads/slide_1.jpg">
-              <span>XIU主题演示</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="uploads/slide_2.jpg">
-              <span>XIU主题演示</span>
-            </a>
-          </li>
+
+        <ul class="swipe-wrapper" id="slidesTpl">
+          <!-- 轮播图模板 -->
         </ul>
+
         <p class="cursor"><span class="active"></span><span></span><span></span><span></span></p>
         <a href="javascript:;" class="arrow prev"><i class="fa fa-chevron-left"></i></a>
         <a href="javascript:;" class="arrow next"><i class="fa fa-chevron-right"></i></a>
@@ -318,7 +297,23 @@
     </div>
   </div>
   <script src="assets/vendors/jquery/jquery.js"></script>
+  <script src="./assets/vendors/nprogress/nprogress.js"></script>
   <script src="assets/vendors/swipe/swipe.js"></script>
+  <script src="./assets/vendors/art-template/template-web.js"></script>
+  <script src="./assets/js/home.js"></script>
+
+  <!-- 轮播图模板 -->
+  <script type="text/html" id="slidesTpl">
+    {{each data}}
+    <li>
+        <a href="#">
+          <img src="uploads/slide_2.jpg">
+          <span>XIU主题演示</span>
+        </a>
+    </li>
+    {{/each}}
+      
+  </script>
   <script>
     //
     var swiper = Swipe(document.querySelector('.swipe'), {
